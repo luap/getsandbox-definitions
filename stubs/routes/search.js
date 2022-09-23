@@ -11,20 +11,15 @@ exports.postSearch = function(req, res) {
 	
 	state.preferences = state.preferences || [];
 	
-	state.preferences.id = faker.datatype.uuid();
-	state.preferences.lastModifiedBy = faker.name.findName();
-	state.preferences.lastModifiedBy = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
+	let preference = req.body;
+	
+	preference.id = faker.datatype.uuid();
+	preference.lastModifiedBy = faker.name.findName();
+	preference.lastModifiedBy = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
     
     // persist user by adding to the state object
-    state.preferences.push(req.body);
+    state.preferences.push(preference);
 
 	// set response body and send
-	res.json({
-  "email": "200@tmw.test",
-  "preferences": [
-    "Post"
-  ],
-  "source": "Salesforce",
-  "lastModifiedDate": "1990-06-14T03:10:40.678Z"
-});
+	res.json(preference);
 };
