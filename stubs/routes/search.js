@@ -13,6 +13,12 @@ exports.postSearch = function(req, res) {
 
     // route param {username} is available on req.params
     var email = req.body.email;
+    
+    if (email.includes('400')) {
+        res.status(400);
+    } else if (email.includes('500')) {
+        res.status(500);
+    }
 
     // log it to the console
     console.log("Getting email " + email + " details");
