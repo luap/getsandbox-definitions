@@ -8,16 +8,23 @@
  */
 exports.postSearch = function(req, res) {
 	res.status(200);
+	
+	state.preferences = state.preferences || [];
+	
+	state.preferences.id = faker.datatype.uuid();
+	state.preferences.lastModifiedBy = faker.name.findName();
+	state.preferences.lastModifiedBy = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
+    
+    // persist user by adding to the state object
+    state.preferences.push(req.body);
 
 	// set response body and send
 	res.json({
-  "id": "67917474-4036-fbc9-0f17-36a2119f0ec9",
   "email": "200@tmw.test",
   "preferences": [
     "Post"
   ],
   "source": "Salesforce",
-  "lastModifiedBy": "exercitation Lorem",
   "lastModifiedDate": "1990-06-14T03:10:40.678Z"
 });
 };
