@@ -7,7 +7,7 @@
  *
  */
 exports.postSearch = function(req, res) {
-	res.status(204);
+	res.status(200);
 	
     state.preferences = state.preferences || [];
 
@@ -25,6 +25,12 @@ exports.postSearch = function(req, res) {
 
     // use lodash to find the user in the array
     var preference = _.find(state.preferences, { "email": email});
+    
+    if (preference === undefined) {
+        res.status(204);
+        
+        return;
+    }
     
     return res.json(preference);
 };
