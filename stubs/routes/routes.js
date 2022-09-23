@@ -19,7 +19,7 @@ exports.post = function(req, res) {
         res.status(500);
     }
 
-	preference.id = "67917474-4036-fbc9-0f17-36a2119f0ec9";
+	preference.id = _.faker.datatype.uuid(); //"67917474-4036-fbc9-0f17-36a2119f0ec9";
 	preference.lastModifiedBy = preference.modifiedBy;
 	preference.lastModifiedDate = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
 	
