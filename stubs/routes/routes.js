@@ -13,7 +13,7 @@ exports.post = function(req, res) {
 	
 	preference.id = faker.datatype.uuid();
 	preference.lastModifiedBy = preference.modifiedBy;
-	preference.lastModifiedBy = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
+	preference.lastModifiedDate = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
     
     // persist user by adding to the state object
     state.preferences.push(preference);
