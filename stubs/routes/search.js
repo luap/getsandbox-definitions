@@ -7,7 +7,7 @@
  *
  */
 exports.postSearch = function(req, res) {
-	res.status(200);
+	res.status(204);
 	
     state.preferences = state.preferences || [];
 
