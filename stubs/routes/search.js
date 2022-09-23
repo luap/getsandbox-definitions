@@ -24,7 +24,7 @@ exports.postSearch = function(req, res) {
     console.log("Getting email " + email + " details");
 
     // use lodash to find the user in the array
-    var preference = _.find(state.preferences, { "email": email});
+    var preference = _.findLast(state.preferences, { "email": email});
     
     if (preference === undefined) {
         res.status(204);
