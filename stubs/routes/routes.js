@@ -12,6 +12,12 @@ exports.post = function(req, res) {
 	state.preferences = state.preferences || [];
 	
 	let preference = req.body;
+	
+	if (preference.email.includes('400')) {
+        res.status(400);
+    } else if (preference.email.includes('500')) {
+        res.status(500);
+    }
 
 	preference.id = "67917474-4036-fbc9-0f17-36a2119f0ec9";
 	preference.lastModifiedBy = preference.modifiedBy;
