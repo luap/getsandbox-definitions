@@ -9,17 +9,16 @@
 exports.postSearch = function(req, res) {
 	res.status(200);
 	
-	state.preferences = state.preferences || [];
-	
-	let preference = req.body;
-	
-	preference.id = faker.datatype.uuid();
-	preference.lastModifiedBy = faker.name.findName();
-	preference.lastModifiedBy = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
-    
-    // persist user by adding to the state object
-    state.preferences.push(preference);
+    state.preferences = state.preferences || [];
 
-	// set response body and send
-	res.json(preference);
+    // route param {username} is available on req.params
+    var email = req.params.email;
+
+    // log it to the console
+    console.log("Getting email " + email + " details");
+
+    // use lodash to find the user in the array
+    var preference = _.find(state.preferences, { "email": email});
+    
+    return res.json(preference);
 };
