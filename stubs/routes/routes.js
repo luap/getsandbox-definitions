@@ -1,3 +1,5 @@
+
+
 /*
  * POST /
  *
@@ -10,7 +12,7 @@ exports.post = function(req, res) {
 	state.preferences = state.preferences || [];
 	
 	let preference = req.body;
-	faker().datatype.uuid();
+
 	preference.id = "67917474-4036-fbc9-0f17-36a2119f0ec9";
 	preference.lastModifiedBy = preference.modifiedBy;
 	preference.lastModifiedDate = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
