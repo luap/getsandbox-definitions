@@ -29,7 +29,7 @@ exports.postSearch = function(req, res) {
     if (preference === undefined) {
         res.status(204);
         
-        return;
+        return res;
     }
     
     return res.json(preference);
