@@ -21,10 +21,9 @@ exports.post = function(req, res) {
 
 	preference.id = "67917474-4036-fbc9-0f17-36a2119f0ec9";
 	preference.lastModifiedBy = preference.modifiedBy;
-	preference.lastModifiedDate = "2022-09-23T16:20:38.892Z";
+	preference.lastModifiedDate = moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
 	
 	//moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
-	
 	//"lastModifiedDate": "2022-09-23T16:20:38.892Z"
     
     // persist user by adding to the state object
