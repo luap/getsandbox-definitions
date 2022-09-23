@@ -12,7 +12,7 @@ exports.postSearch = function(req, res) {
     state.preferences = state.preferences || [];
 
     // route param {username} is available on req.params
-    var email = req.params.email;
+    var email = req.body.email;
 
     // log it to the console
     console.log("Getting email " + email + " details");
