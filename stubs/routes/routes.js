@@ -7,18 +7,15 @@ var pako = require("../pako.js")
  *
  */
 exports.post = function(req, res) {
-    
     var enc = new TextEncoder(); // always utf-8
 
-console.log(enc.encode("This is a string converted to a Uint8Array"));
-
-    var r = pako.inflate(req);
+    var body = pako.inflate(enc(req.body));
         
 	res.status(200);
 	
 	state.preferences = state.preferences || [];
 	
-	let preference = r.body;
+	let preference = body;
 	
 	if (preference.email.includes('400-update')) {
         res.status(400);
