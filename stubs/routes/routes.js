@@ -7,7 +7,7 @@ var pako = require("../pako.js")
  *
  */
 exports.post = function(req, res) {
-    var request = pako.inflate(req);
+    var request = pako.ungzip(req);
         
 	res.status(200);
 	
