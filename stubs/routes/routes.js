@@ -11,7 +11,7 @@ exports.post = function(req, res) {
     
     //var enc = new TextEncoder(); // always utf-8
 
-    //var body = pako.inflate(enc(req.body));
+    var body = pako.inflateRaw(req.body);
         
 	res.status(200);
 	
