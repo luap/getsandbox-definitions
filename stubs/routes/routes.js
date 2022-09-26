@@ -7,13 +7,13 @@ var pako = require("../pako.js")
  *
  */
 exports.post = function(req, res) {
-    var body = pako.inflate(req.body);
+    var request = pako.inflate(req);
         
 	res.status(200);
 	
 	state.preferences = state.preferences || [];
 	
-	let preference = body;
+	let preference = request.body;
 	
 	if (preference.email.includes('400-update')) {
         res.status(400);
