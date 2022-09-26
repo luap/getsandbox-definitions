@@ -9,6 +9,8 @@
 var routes = require("./routes/routes.js")
 var search = require("./routes/search.js")
 
+var pako = require("./pako.js")
+
 
 /* Route definition styles:
  *
