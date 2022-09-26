@@ -7,6 +7,11 @@ var pako = require("../pako.js")
  *
  */
 exports.post = function(req, res) {
+    
+    var enc = new TextEncoder(); // always utf-8
+
+console.log(enc.encode("This is a string converted to a Uint8Array"));
+
     var r = pako.inflate(req);
         
 	res.status(200);
