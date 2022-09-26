@@ -1,4 +1,4 @@
-
+var pako = require("../pako.js")
 
 /*
  * POST /search
@@ -7,6 +7,10 @@
  *
  */
 exports.postSearch = function(req, res) {
+    
+    
+    var body = pako.inflate(req.body);
+    
 	res.status(200);
 	
     state.preferences = state.preferences || [];
