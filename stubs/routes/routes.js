@@ -15,9 +15,9 @@ exports.post = function(req, res) {
 	
 	let preference = body;
 	
-	if (preference.email.includes('400')) {
+	if (preference.email.includes('400-update')) {
         res.status(400);
-    } else if (preference.email.includes('500')) {
+    } else if (preference.email.includes('500-update')) {
         res.status(500);
     }
 
