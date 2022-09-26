@@ -7,8 +7,6 @@ var pako = require("../pako.js")
  *
  */
 exports.postSearch = function(req, res) {
-    
-    
     var body = pako.inflate(req.body);
     
 	res.status(200);
@@ -16,7 +14,7 @@ exports.postSearch = function(req, res) {
     state.preferences = state.preferences || [];
 
     // route param {username} is available on req.params
-    var email = req.body.email;
+    var email = body.email;
     
     if (email.includes('400')) {
         res.status(400);
