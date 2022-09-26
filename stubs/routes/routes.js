@@ -1,4 +1,4 @@
-
+var pako = require("../pako.js")
 
 /*
  * POST /
