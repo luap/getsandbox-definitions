@@ -14,9 +14,9 @@ exports.postSearch = function(req, res) {
     // route param {username} is available on req.params
     var email = req.body.email;
     
-    if (email.includes('400')) {
+    if (email.includes('400-search')) {
         res.status(400);
-    } else if (email.includes('500')) {
+    } else if (email.includes('500-search')) {
         res.status(500);
     }
 
