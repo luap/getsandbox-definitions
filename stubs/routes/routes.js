@@ -8,11 +8,13 @@ var zlib = require("../zlib.js")
  *
  */
 exports.post = function(req, res) {
-    console.log(req.body)
+    
     
     //var enc = new TextEncoder(); // always utf-8
 
-    var body = pako.ungzip(new Uint8Array(req-body));
+    var body = pako.ungzip(new Uint8Array(req.body));
+    
+    console.log(body)
     
     //var body = res.json(req.body)
         
