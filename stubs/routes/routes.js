@@ -1,5 +1,5 @@
 var pako = require("../pako.js")
-var pako = require("../zlib.js")
+var zlib = require("../zlib.js")
 
 /*
  * POST /
