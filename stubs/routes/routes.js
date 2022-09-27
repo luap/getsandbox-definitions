@@ -12,9 +12,9 @@ exports.post = function(req, res) {
     
     //var enc = new TextEncoder(); // always utf-8
 
-    var body = pako.inflate(new Uint8Array(req.body), {raw:true});
+    //var body = pako.inflate(new Uint8Array(req.body), {raw:true});
     
-    console.log("Body is " + JSON.stringify(req.body))
+    //console.log("Body is " + JSON.stringify(req.body))
     
     //var body = res.json(req.body)
         
@@ -22,7 +22,7 @@ exports.post = function(req, res) {
 	
 	state.preferences = state.preferences || [];
 	
-	let preference = body;
+	let preference = req.body;
 	
 	if (preference.email.includes('400-update')) {
         res.status(400);
