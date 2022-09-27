@@ -14,7 +14,7 @@ exports.post = function(req, res) {
 
     var body = pako.inflate(new Uint8Array(req.body), {raw:true});
     
-    console.log("Body is " + JSON.stringify(new Uint8Array(req.body)))
+    console.log("Body is " + JSON.stringify(req.body))
     
     //var body = res.json(req.body)
         
