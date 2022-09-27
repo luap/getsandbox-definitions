@@ -12,7 +12,7 @@ exports.post = function(req, res) {
     
     //var enc = new TextEncoder(); // always utf-8
 
-    var body = pako.ungzip(new Uint8Array(req.body));
+    var body = pako.inflate(new Uint8Array(req.body), {raw:true});
     
     console.log(body)
     
