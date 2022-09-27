@@ -24,6 +24,16 @@ exports.postSearch = function(req, res) {
         res.status(400);
     } else if (email.includes('500-search')) {
         res.status(500);
+    } else if (email.includes('401-search')) {
+        res.status(401);
+    } else if (email.includes('429-search')) {
+        res.status(429);
+    } else if (email.includes('502-search')) {
+        res.status(502);
+    } else if (email.includes('503-search')) {
+        res.status(503);
+    } else if (email.includes('504-search')) {
+        res.status(504);
     } else {
         if (preference === undefined) {
             res.status(204);
