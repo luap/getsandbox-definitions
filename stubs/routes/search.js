@@ -26,6 +26,8 @@ exports.postSearch = function(req, res) {
         res.status(500);
     } else if (email.includes('401-search')) {
         res.status(401);
+    } else if (email.includes('403-search')) {
+        res.status(403);
     } else if (email.includes('429-search')) {
         res.status(429);
     } else if (email.includes('502-search')) {
