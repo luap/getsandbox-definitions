@@ -23,11 +23,23 @@ exports.post = function(req, res) {
 	state.preferences = state.preferences || [];
 	
 	let preference = req.body;
-	
-	if (preference.email.includes('400-update')) {
+
+    if (preference.email.includes('400-update')) {
         res.status(400);
     } else if (preference.email.includes('500-update')) {
         res.status(500);
+    } else if (preference.email.includes('401-update')) {
+        res.status(401);
+    } else if (preference.email.includes('403-update')) {
+        res.status(403);
+    } else if (preference.email.includes('429-update')) {
+        res.status(429);
+    } else if (preference.email.includes('502-update')) {
+        res.status(502);
+    } else if (preference.email.includes('503-update')) {
+        res.status(503);
+    } else if (preference.email.includes('504-update')) {
+        res.status(504);
     }
 
 	preference.id = "67917474-4036-fbc9-0f17-36a2119f0ec9";
